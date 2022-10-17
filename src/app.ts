@@ -1,4 +1,4 @@
-
+let myAge: number = 14;
 let age: number = 50;
 let userName: string = "Dima";
 let toggle: boolean = true;
@@ -26,7 +26,7 @@ enum Enum { ENABLE, DISABLE };
 let someVar: number | string;
 let someVar2: 'enable' | 'disable';
 
-function showMessage(message): void  {
+function showMessage(message:string): void  {
     console.log(message)
 }
 
@@ -82,17 +82,17 @@ const page2 : MyType2 = {
 
 // --------------------------FIRST LESSON------------------------------------
 
-// const firstInput = document.querySelector("#num1")! as HTMLInputElement;
-// const secondInput = document.getElementById("num2")! as HTMLInputElement;
-// const button = document.querySelector("button")! as HTMLButtonElement;
+const firstInput = document.querySelector("#num1")! as HTMLInputElement;
+const secondInput = document.getElementById("num2")! as HTMLInputElement;
+const button = document.querySelector("button")! as HTMLButtonElement;
 
-// button.addEventListener("click", onClick);
+button.addEventListener("click", onClick);
 
-// function add(num1: number, num2: number) {
-//   const add = num1 + num2;
-//   return add
-// }
+function add(num1: number, num2: number) {
+  const add = num1 + num2;
+  return add
+}
 
-// function onClick() {
-//   console.log(add(+firstInput.value, +secondInput.value));
-//   }
+function onClick() {
+  console.log(add(+firstInput.value, +secondInput.value));
+  }
