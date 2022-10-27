@@ -15,9 +15,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Key = (function () {
-    function Key(maxNum, minNum) {
-        var randomNumber = Math.floor(Math.random() * (maxNum - minNum) + minNum);
-        this.signature = randomNumber;
+    function Key(maxNub, minNum) {
+        var randNumb = Math.floor(Math.random() * (maxNub - minNum) + minNum);
+        this.signature = randNumb;
     }
     Key.prototype.getSignature = function () {
         return this.signature;
@@ -28,6 +28,7 @@ var Person = (function () {
     function Person(key) {
         this.key = key;
     }
+    ;
     Person.prototype.getKey = function () {
         return this.key;
     };
@@ -44,31 +45,29 @@ var House = (function () {
             throw new Error('The door is closed');
         }
         this.tenants.push(person);
-        console.log('Person is in the House');
+        console.log("The person is in the house :)");
     };
     return House;
 }());
-var MyHouse = (function (_super) {
-    __extends(MyHouse, _super);
-    function MyHouse() {
+var MyHome = (function (_super) {
+    __extends(MyHome, _super);
+    function MyHome() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    MyHouse.prototype.openDoor = function (key) {
+    MyHome.prototype.openDoor = function (key) {
         if (key.getSignature() !== this.key.getSignature()) {
-            throw new Error('Wrong key');
+            throw new Error('The key does not math');
         }
         this.isDoorOpen = true;
+        console.log('The door is open');
     };
-    return MyHouse;
+    return MyHome;
 }(House));
-var key = new Key(1, 3);
+var key1 = new Key(1, 3);
 var key2 = new Key(1, 3);
-console.log(key);
-console.log(key2);
-var person1 = new Person(key2);
-console.log(person1);
-var myHouse = new MyHouse(key);
-console.log(myHouse);
-myHouse.openDoor(person1.getKey());
-myHouse.comeIn(person1);
+console.log(key1, key2);
+var person1 = new Person(key1);
+var myHome = new MyHome(key2);
+myHome.openDoor(person1.getKey());
+myHome.comeIn(person1);
 //# sourceMappingURL=class.js.map
